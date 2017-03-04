@@ -1,0 +1,76 @@
+{
+	"variables": [],
+	"info": {
+		"name": "demo-cqrs",
+		"_postman_id": "443af07b-cef4-2032-7f25-7fcd4d5eeab3",
+		"description": "demo-cqrs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "demo-cqrs-complaints",
+			"description": "demo-cqrs-complaints",
+			"item": [
+				{
+					"name": "File a complaint",
+					"request": {
+						"url": "http://localhost:8081",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"company\":\"Apple\",\n\t\"description\":\"Apple complaint\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get all complaints",
+					"request": {
+						"url": "http://localhost:8081",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get complaint by id",
+					"request": {
+						"url": "http://localhost:8081/9114cdbd-3134-41b2-aa17-578d24b49399",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get complaint by id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "demo-cqrs-statistics",
+			"description": "",
+			"item": [
+				{
+					"name": "Get statistics of complaints",
+					"request": {
+						"url": "http://localhost:8082/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get statistics of complaints"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

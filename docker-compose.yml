@@ -10,3 +10,30 @@ services:
         max-size: "10m"
         max-file: "10"
 
+  db:
+     image: mysql:5.7
+     restart: always
+     environment:
+      - MYSQL_ROOT_PASSWORD=machine
+      - MYSQL_DATABASE=demo-cqrs
+      - MYSQL_USER=cqrs
+      - MYSQL_PASSWORD=cqrs
+     ports:
+       - 3306:3306
+     volumes:
+       - ./demo-cqrs-mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+       - db_data:/var/lib/mysql
+
+  demo-cqrs-complaints:
+      build: demo-cqrs-complaints
+      links:
+       - db
+      ports:
+        - 8081:8081
+
+  demo-cqrs-statistics:
+      build: demo-cqrs-statistics
+      ports:
+        - 8082:8082
+volumes:
+  db_data:
