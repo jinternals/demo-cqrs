@@ -1,13 +1,11 @@
 ## Spring Boot CQRS Example
 
 
-### How to Run with docker compose with docker profile:
+### How to Run with docker:
 > mvn clean install -P docker
 
 
 > docker-compose -f docker-compose.yml up -d --build
-
-
 ### How to Run locally with development profile:
 > mvn clean install -P development
 
