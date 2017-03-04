@@ -1,4 +1,4 @@
-## Spring CQRS Example
+## Spring Boot CQRS Example
 
 
 ### How to Run :
