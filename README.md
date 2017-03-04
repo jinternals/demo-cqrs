@@ -1,8 +1,19 @@
 ## Spring Boot CQRS Example
 
 
-### How to Run :
+### How to Run with docker compose with docker profile:
+> mvn clean install -P docker
+
+
 > docker-compose -f docker-compose.yml up -d --build
+
+
+### How to Run locally with development profile:
+> mvn clean install -P development
+
+
+> docker-compose -f docker-compose.yml up -d --build
+
 
 ### Import [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) File for invoking web services:
 

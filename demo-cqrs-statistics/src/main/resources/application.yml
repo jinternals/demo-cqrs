@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+
+spring:
+  profiles:
+    active: @active.profile@
+
+#@ProcessingGroup("amqpEvents")
+#@Bean("complaintEvents")
+axon:
+  eventhandling:
+    processors:
+      amqpEvents:
+        source: complaintEvents
+
+---
+spring:
+  profiles: docker
+  rabbitmq:
+    host: rabbitmq
+
+---
+spring:
+  profiles: development
+  rabbitmq:
+    host: localhost

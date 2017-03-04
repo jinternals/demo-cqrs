@@ -75,17 +75,17 @@
     <profiles>
         <profile>
             <id>development</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <build.profile.id>development</build.profile.id>
             </properties>
         </profile>
         <profile>
-            <id>production</id>
+            <id>docker</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
-                <build.profile.id>production</build.profile.id>
+                <build.profile.id>docker</build.profile.id>
             </properties>
         </profile>
     </profiles>

@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+axon:
+  amqp:
+    exchange: ComplaintEvents
+
+spring:
+  profiles:
+    active: @active.profile@
+---
+spring:
+  profiles: docker
+  datasource:
+    url: jdbc:mysql://db:3306/demo-cqrs?useSSL=false
+    username: cqrs
+    password: cqrs
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  rabbitmq:
+    host: rabbitmq
+
+---
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo-cqrs?useSSL=false
+    username: cqrs
+    password: cqrs
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  rabbitmq:
+    host: localhost

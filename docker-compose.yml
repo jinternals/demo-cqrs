@@ -30,10 +30,16 @@ services:
        - db
       ports:
         - 8081:8081
+      depends_on:
+        - db
+        - rabbitmq
 
   demo-cqrs-statistics:
       build: demo-cqrs-statistics
       ports:
         - 8082:8082
+      depends_on:
+        - rabbitmq
+        - demo-cqrs-complaints
 volumes:
   db_data:
